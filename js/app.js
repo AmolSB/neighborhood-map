@@ -1,9 +1,8 @@
 var MapApplication = function() {
 	// member function
+
 	self = this;
-
 	var map;
-
 	var	localLocation = {lat: -37.810432, lng: 144.96616};
 
 	self.locations = ko.observableArray([
@@ -11,9 +10,7 @@ var MapApplication = function() {
 		{name: 'Ariport', coord: {lat: -37.669012, lng: 144.841027}}
 	]);
 
-
 	var configureBindingHandlers = function() {
-
 		ko.bindingHandlers.mapPanel = {
 			init: function(element, valueAccessor) {
 				map = new google.maps.Map(element, {
@@ -32,7 +29,7 @@ var MapApplication = function() {
 	}
 
 	// return {
-	// 
+		// myname: self.myname
 	// }
 }
 
