@@ -1,0 +1,23 @@
+body {
+	height: 100vh;
+	margin: 0;
+}
+
+.map-canvas {
+	width: 100%;
+	height: 100vh;
+	width: 70%;
+	float: right;
+}
+
+.container-fluid, .col-md-*, .panel, .panel-body {
+	padding: 0;
+	margin: 0;
+}
+
+.places {
+	margin: 0;
+	padding: 0;
+	width: 30%;
+	float: left;
+}
