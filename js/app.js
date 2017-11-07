@@ -3,8 +3,7 @@ var MapApplication = function() {
 
 	self = this;
 	var map;
-	var	localLocation = {lat: -37.810432, lng: 144.96616};
-
+	var	localLocation = {lat: 51.513144, lng: -0.124396};
 	self.locations = ko.observableArray();
 
 	var configureBindingHandlers = function() {
@@ -19,8 +18,10 @@ var MapApplication = function() {
 	}();
 
 	self.showMarker = function(obj) {
+ 		var placeLatLng = new google.maps.LatLng(obj.location.lat, obj.location.lng);
+		console.log(placeLatLng);
 		var marker = new google.maps.Marker({
-			position: obj.coord,
+			position: placeLatLng,
 			map: map
 		});
 	}
