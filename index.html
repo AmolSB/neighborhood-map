@@ -6,17 +6,34 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-	<div>
-		<div class="places">
-			<ul data-bind="foreach: locations">
+	<div class="places">
+		<!-- Top Picks -->
+		<div class="topPickes">
+			<h3>Top Picks</h3>
+			<ul data-bind="foreach: topPicks">
 				<li data-bind="click: $parent.showMarker, text: name"></li>
 			</ul>
 		</div>
-		<div>
-			<div data-bind="mapPanel" class="map-canvas"></div>
-		</div>	
-	</div>
 
+		<!-- Restaurants -->
+		<div class="restaurants">
+			<h3>Restaurants</h3>
+			<ul data-bind="foreach: restaurants">
+				<li data-bind="click: $parent.showMarker, text: name"></li>
+			</ul>
+		</div>
+
+		<!-- Shops -->
+		<div class="shops">
+			<h3>Shops</h3>
+			<ul data-bind="foreach: shops">
+				<li data-bind="click: $parent.showMarker, text: name"></li>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<div data-bind="mapPanel" class="map-canvas"></div>
+	</div>
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/knockout/dist/knockout.js"></script>	
