@@ -6,7 +6,6 @@ body {
 .map-canvas {
 	width: 100%;
 	height: 100vh;
-	width: 70%;
 	float: right;
 }
 
@@ -17,7 +16,54 @@ body {
 
 .places {
 	margin: 0;
+	padding: 0
+}
+
+.row {
+
+}
+
+.top-picks, .col-md-9 {
+	margin: 0;
 	padding: 0;
-	width: 30%;
-	float: left;
+}
+
+#places {
+	background-color: #333;
+}
+
+.navbar-header {
+  float: none;
+}
+.navbar-toggle {
+  display: block;
+}
+.navbar-collapse.collapse {
+  display: none!important;
+}
+.navbar-nav {
+  float: none!important;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  line-height: 30px;
+}
+.navbar-nav>li {
+  float: none;
+}
+.navbar-collapse.collapse.in{
+  display:block !important;
+}
+
+.navbar {
+	margin: 0;
+	border-radius: 0;
+}
+
+.search {
+	text-align: center;
+}
+
+.navbar-inverse {
+	background-color: #333;
 }
