@@ -38,7 +38,7 @@ body {
 
 input[type=text]:not(.browser-default) {
 	margin: 15px 0;
-	border: 1px solid black;
+	border: 1px solid #aaa;
 	font-size: 20px;
 	border-radius: 2px;
 	height: 2rem;
@@ -65,9 +65,12 @@ h4 {
 	display: initial;
 	height: 40px;
 	line-height: 40px;
-	font-size: 20px;
 }
 
 .side-nav li>a:hover {
 	background-color: white;
+}
+
+.side-nav li:first-child {
+	border-top: none;
 }
