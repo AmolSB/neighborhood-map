@@ -29,14 +29,14 @@ var MapApplication = function() {
                     },
                 });
             }
-        }
+        };
     }();
 
     var showAllMarkers = function() {
         for (var i = 0; i < self.topPicksMarkers().length; i++) {
             self.topPicksMarkers()[i].setVisible(true);
         }
-    }
+    };
 
     var showInfoWindow = function(obj) {
         var infoWindowLocation = new google.maps.LatLng(obj.location.lat, obj.location.lng);
@@ -49,21 +49,15 @@ var MapApplication = function() {
             <p>${obj.location.address}</p>
             <a href="${obj.url}">Go to Website</a>
             </div>`
-        })
+        });
         infowindow.open(map);
-    }
+    };
 
-    var showMarkerInfoWindow = function(marker) {
-        for (var i = 0; i < self.topPicks().length; i++) {
-            if (marker.loc == self.topPicks()[i].name) {
-                showInfoWindow(self.topPicks()[i])
-            }
-        }
-    }
+
 
     self.filteredPlaces = ko.computed(function() {
         var nameSearch = self.nameSearch();
-        var result = []
+        var result = [];
 
         if (!nameSearch) {
             showAllMarkers();
@@ -73,7 +67,7 @@ var MapApplication = function() {
 
         for (var i = 0; i < self.topPicks().length; i++) {
             if (self.topPicks()[i].name.toLowerCase().includes(nameSearch.toLowerCase())) {
-                result.push(self.topPicks()[i])
+                result.push(self.topPicks()[i]);
                 self.topPicksMarkers()[i].setVisible(true);
             } else {
                 self.topPicksMarkers()[i].setVisible(false);
@@ -87,7 +81,7 @@ var MapApplication = function() {
     self.showMarkerAndInfoWindow = function(obj) {
         getMarkerByPlace(obj);
         showInfoWindow(obj);
-    }
+    };
 
     var getMarkerByPlace = function(obj) {
         for (var i = 0; i < self.topPicksMarkers().length; i++) {
@@ -95,7 +89,7 @@ var MapApplication = function() {
                 self.topPicksMarkers()[i].setAnimation(google.maps.Animation.DROP);
             }
         }
-    }
+    };
 
     var getPlaceByMarker = function(obj) {
         for (var i = 0; i < self.topPicks().length; i++) {
@@ -103,7 +97,7 @@ var MapApplication = function() {
                 return self.topPicks()[i];
             }
         }
-    }
+    };
 
     var topPicksURL = 'https://api.foursquare.com/v2/venues/explore?client_id=K2JWQRQEIQT2M5HTJGBW3TQXNSOU1EI3SAPO0DDMNLMT24DD&client_secret=FXX3ZZXCVCJUYILHGIB2CSTKVDK51XXLOL4WOZUFFKN52AYE&ll=48.8566,2.3522&radius=10000&time=any&v=20150409&m=swarm&section=topPicks&limit=10';
 
@@ -120,7 +114,7 @@ var MapApplication = function() {
         for (var i = 0; i < data.response.groups[0].items.length; i++) {
             array.push(data.response.groups[0].items[i].venue);
         }
-    }
+    };
 
     var addTopPicksMarkers = function(data, array) {
         for (var i = 0; i < data.response.groups[0].items.length; i++) {
@@ -136,12 +130,12 @@ var MapApplication = function() {
             marker.addListener('click', function() {
                 this.setAnimation(google.maps.Animation.DROP);
                 showInfoWindow(getPlaceByMarker(this));
-            })
+            });
             array.push(marker);
         }
-    }
+    };
 
-}
+};
 
 ko.applyBindings(new MapApplication());
 
