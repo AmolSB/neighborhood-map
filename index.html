@@ -3,48 +3,21 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Knockout: Map</title>
-	<!-- <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"> -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-<!-- <nav class="navbar navbar-inverse navbar-fixed-top navbar-absolute">
-	<div class="container-fluid">
-		<div class="navbar-header">
-		<span class="navbar-brand">Neighborhood Map</span>
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#places">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-	</div>
-</nav> -->
-
-<!--  <div class="toggle-btn">
-	<button data-toggle="collapse" data-target="#places"></button>
-</div> -->
-	<div class="cont">
-		<!-- Top Picks -->
-		<!-- <div class="top-picks navbar-collapse" id="places">
-			<div class="search">
-				<input type="text" data-bind="value: nameSearch, valueUpdate: 'input'">
-			</div>
-			<ul class="nav navbar-nav" data-bind="foreach: filteredPlaces">
-				<li data-bind="click: $parent.doSomething, text: name"></li>
-			</ul>
-		</div> -->
+	<div class="content">
 
 		<div id="slide-out" class="side-nav">
-			<h3>Top Picks</h3>
+			<h4>Top Picks</h4>
   			<div class="search">
 				<input type="text" data-bind="value: nameSearch, valueUpdate: 'input'">
 			</div>
  			<ul data-bind="foreach: filteredPlaces">
-				<li data-bind="click: $parent.doSomething, text: name"></li>
+				<li><a href="#" data-bind="click: $parent.showMarkerAndInfoWindow, text: name" class="place"></a></li>
 			</ul>
   		</div>
   		<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -54,17 +27,10 @@
 			<div data-bind="mapPanel" class="map-canvas"></div>
 		</div>
 	</div>
-	
-     
 
-
-
-	<script src="node_modules/lazy.js/lazy.js"></script>
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="bower_components/knockout/dist/knockout.js"></script>	
 	<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANP4lf0bnIap7gwVZ2wswQDsgWwf4a8lo&v=3&libraries=places, autocomplete"></script>
