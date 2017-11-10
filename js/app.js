@@ -1,3 +1,4 @@
+/*jshint loopfunc:true */
 var MapApplication = function() {
 
     self = this;
@@ -9,9 +10,7 @@ var MapApplication = function() {
     self.topPicks = ko.observableArray();
     self.nameSearch = ko.observable();
     self.topPicksMarkers = ko.observableArray();
-    self.shopsMarkers = ko.observableArray();
     var marker = new google.maps.Marker();
-    self.allLocations = ko.observableArray();
     var infowindow = new google.maps.InfoWindow({
         pixelOffset: new google.maps.Size(0, -20)
     });
