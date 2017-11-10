@@ -20,7 +20,12 @@ var MapApplication = function() {
 			init: function(element, valueAccessor) {
 				map = new google.maps.Map(element, {
 					center: localLocation,
-					zoom: 13
+					zoom: 12,
+					mapTypeControl: true,
+					mapTypeControlOptions: {
+      				  style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+       				  position: google.maps.ControlPosition.TOP_RIGHT
+    				},
 				});
 			}
 		}
@@ -217,3 +222,5 @@ $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
 });
+
+$(".button-collapse").sideNav();

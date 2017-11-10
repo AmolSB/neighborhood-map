@@ -6,64 +6,63 @@ body {
 .map-canvas {
 	width: 100%;
 	height: 100vh;
-	float: right;
+
 }
 
-.container-fluid, .col-md-*, .panel, .panel-body {
-	padding: 0;
-	margin: 0;
-}
+
 
 .places {
 	margin: 0;
 	padding: 0
 }
 
-.row {
 
-}
-
-.top-picks, .col-md-9 {
-	margin: 0;
-	padding: 0;
-}
-
-#places {
-	background-color: #333;
-}
-
-.navbar-header {
-  float: none;
-}
-.navbar-toggle {
-  display: block;
-}
-.navbar-collapse.collapse {
-  display: none!important;
-}
-.navbar-nav {
-  float: none!important;
-  text-align: center;
-  color: white;
-  font-size: 1.2em;
-  line-height: 30px;
-}
-.navbar-nav>li {
-  float: none;
-}
-.navbar-collapse.collapse.in{
-  display:block !important;
-}
-
-.navbar {
-	margin: 0;
-	border-radius: 0;
-}
-
-.search {
+.cont {
 	text-align: center;
 }
 
-.navbar-inverse {
-	background-color: #333;
+
+
+
+/*.search {
+	margin-top: 30px;
+	text-align: center;
+	border-top: 1px solid black;
+	border-bottom: none;
+	padding-left: 5px;
+	padding-right: 5px;
+}*/
+
+
+.button-collapse, .map {
+	top:  0px;
+	left: 0px;
+}
+
+.map-canvas {
+	position: absolute;
+
+}
+
+.button-collapse {
+	position: absolute;
+	z-index: 2
+}
+
+.material-icons {
+	font-size: 40px;
+	color: #333;
+	background-color: rgba(256, 256, 256, 0.8);
+	border-radius: 5px;
+}
+
+input[type=text]:not(.browser-default) {
+	margin: 20px 0;
+	border: 1px solid black;
+	font-size: 20px;
+	border-radius: 2px;
+}
+
+.search {
+	padding: 8px;
 }
