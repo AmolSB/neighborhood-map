@@ -22,7 +22,6 @@ body {
 
 .map-canvas {
 	position: absolute;
-
 }
 
 .button-collapse {
@@ -66,7 +65,7 @@ h4 {
 	display: initial;
 	height: 40px;
 	line-height: 40px;
-	font-size: 17px;
+	font-size: 20px;
 }
 
 .side-nav li>a:hover {

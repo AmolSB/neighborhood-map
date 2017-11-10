@@ -14,7 +14,7 @@
 		<div id="slide-out" class="side-nav">
 			<h4>Top Picks</h4>
   			<div class="search">
-				<input type="text" data-bind="value: nameSearch, valueUpdate: 'input'">
+				<input type="text" data-bind="value: nameSearch, valueUpdate: 'input'" placeholder="Searh Here">
 			</div>
  			<ul data-bind="foreach: filteredPlaces">
 				<li><a href="#" data-bind="click: $parent.showMarkerAndInfoWindow, text: name" class="place"></a></li>
