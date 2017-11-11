@@ -4,8 +4,8 @@ var MapApplication = function() {
     self = this;
     var map;
     var localLocation = {
-        lat: 48.8566,
-        lng: 2.3522
+        lat: 51.508530,
+        lng: -0.076132
     };
     self.topPicks = ko.observableArray();
     self.nameSearch = ko.observable();
@@ -20,7 +20,7 @@ var MapApplication = function() {
             init: function(element, valueAccessor) {
                 map = new google.maps.Map(element, {
                     center: localLocation,
-                    zoom: 13,
+                    zoom: 12,
                     mapTypeControl: true,
                     mapTypeControlOptions: {
                         style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
@@ -98,7 +98,7 @@ var MapApplication = function() {
         }
     };
 
-    var topPicksURL = 'https://api.foursquare.com/v2/venues/explore?client_id=K2JWQRQEIQT2M5HTJGBW3TQXNSOU1EI3SAPO0DDMNLMT24DD&client_secret=FXX3ZZXCVCJUYILHGIB2CSTKVDK51XXLOL4WOZUFFKN52AYE&ll=48.8566,2.3522&radius=10000&time=any&v=20150409&m=swarm&section=topPicks&limit=10';
+    var topPicksURL = 'https://api.foursquare.com/v2/venues/explore?client_id=K2JWQRQEIQT2M5HTJGBW3TQXNSOU1EI3SAPO0DDMNLMT24DD&client_secret=FXX3ZZXCVCJUYILHGIB2CSTKVDK51XXLOL4WOZUFFKN52AYE&ll=51.508530,-0.076132&radius=10000&time=any&v=20150409&m=swarm&section=topPicks&limit=10';
 
     fetch(topPicksURL).then(function(response) {
         return response.json();
@@ -136,6 +136,12 @@ var MapApplication = function() {
 
 };
 
-ko.applyBindings(new MapApplication());
+var startApp = function() {
+    ko.applyBindings(new MapApplication());    
+};
+
+var mapError = function() {
+    alert("Unable to load Map. Please try again or check if you typed the URL correctly");
+};
 
 $(".button-collapse").sideNav();
