@@ -4,8 +4,8 @@ var MapApplication = function() {
     self = this;
     var map;
     var localLocation = {
-        lat: 51.508530,
-        lng: -0.076132
+        lat: 36.1699,
+        lng: -115.1398
     };
     self.topPicks = ko.observableArray();
     self.nameSearch = ko.observable();
@@ -98,7 +98,7 @@ var MapApplication = function() {
         }
     };
 
-    var topPicksURL = 'https://api.foursquare.com/v2/venues/explore?client_id=K2JWQRQEIQT2M5HTJGBW3TQXNSOU1EI3SAPO0DDMNLMT24DD&client_secret=FXX3ZZXCVCJUYILHGIB2CSTKVDK51XXLOL4WOZUFFKN52AYE&ll=51.508530,-0.076132&radius=10000&time=any&v=20150409&m=swarm&section=topPicks&limit=10';
+    var topPicksURL = 'https://api.foursquare.com/v2/venues/explore?client_id=K2JWQRQEIQT2M5HTJGBW3TQXNSOU1EI3SAPO0DDMNLMT24DD&client_secret=FXX3ZZXCVCJUYILHGIB2CSTKVDK51XXLOL4WOZUFFKN52AYE&ll=36.1699,-115.1398&radius=10000&time=any&v=20150409&m=swarm&section=topPicks&limit=10';
 
     fetch(topPicksURL).then(function(response) {
         return response.json();
